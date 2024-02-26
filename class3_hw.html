@@ -30,19 +30,19 @@ minus one because you're not getting the change for the first day
 */
 
 for (let i = 0; i < snp_data.length - 1; i++) {
-
+    
     // Calculcate the change by day
 
-    let change = snp_data[i].Close - snp_data[i + 1].Close;
+    let change = snp_data[i].Close - snp_data[i + 1].Close;   // i is the current day, i+ 1 is the day before
 
-    // i is the current day, i+ 1 is the day before
+    // Create an object
+    let new_element = {
+        'Date':snp_data[i].Date, // this gets the date value for the element from the snp_data
+        'Change':change // adds the change data you just calculated
+    };
 
     // push the change to the array
-
-    day_change.push({
-        "Date": snp_data[i].Date, // this gets the date value for the element from the snp_data
-        "Change": change // adds the change data you just calculated
-    });
+    day_change.push(new_element);
 
 }
 
