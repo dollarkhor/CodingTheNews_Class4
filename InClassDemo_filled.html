@@ -76,8 +76,6 @@
 
     new_card.classList.add('card'); 
 
-    let green_card = document.getElementById('green');
-
     let cards = document.getElementsByClassName('card');
 
     console.log(cards[1]); // prints <div class="card" id="blue"></div>
@@ -103,6 +101,8 @@
 
      // add text to a paragraph or a div
 
+    let green_card = document.getElementById('green');
+
     paragraph.textContent = 'textContent';
 
     paragraph.style.color = 'white';
@@ -110,6 +110,7 @@
     green_card.append(paragraph);
 
     // add text to a paragraph or a div
+
 
     let italic_tag = '<i>This is a italic tag</i>';
 
