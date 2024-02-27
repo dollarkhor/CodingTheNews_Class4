@@ -54,23 +54,48 @@
 <script>
 
 // Select the div with an orange ID, make the background orange 
+let orange_box = document.getElementById('orange');
+orange_box.style.backgroundColor = 'orange';
 
 // Select the container, add another card with a purple background
+let newCard = document.createElement('div');
+newCard.style.height = '100px';
+newCard.style.width = '30%'
+newCard.style.backgroundColor = 'purple';
+let container = document.getElementById('container');
+container.append(newCard);
 
 // Give all divs with the card class a black border
+ let cards = document.getElementsByClassName('card');
+ newCard.classList = 'card';
+ newCard.setAttribute('id','purple')
+ for(i=0; i < cards.length; i++)
+ cards[i].style.border = '10px solid black';
+console.log(cards)
+
 
 // Remove the blue card
+let blue = document.getElementById('blue');
+blue.style.display = 'none' // OR use blue.remove();
 
 // add the card class name to the new div
 
+
 // remove card class name from purple div
 
+newCard.classList.remove('card')
+
 // add paragraph tags to div
+let p = document.createElement('p');
+newCard.append(p)
 
 // add text to a paragraph 
-
+p.innerText = "Hello World"
 // add html to a div 
 
+let newDiv = document.createElement('div');
+container.append(newDiv);
+newDiv.innerHTML = "<i>This is Italics </i>";
 
 
 </script>
