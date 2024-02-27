@@ -27,23 +27,51 @@
             <div class="green"></div>
             <div class="red"></div>
             <div class="red"></div>
-            <div id="last_card" class="orange"></div>
+            <div class="orange" id="last_card"></div>
         </div>
 
         
         <script>
-
             // make all cards with the class "green" with a green top border, 5px wide, solid stroke
 
+            let greenClass = document.getElementsByClassName('green');
+            for(i=0; i<greenClass.length; i++)
+            greenClass[i].style.border = "5px solid green";
+
+
             // make all cards with the class "red" a bottom border, a width of 3px, and dotted stroke
+            let redClass = document.getElementsByClassName('red');
+            for(i=0; i<redClass.length; i++)
+            redClass[i].style.borderBottom = "3px dotted ";
 
             // for the blue and orange cards, give them background colors (do not add an ID to them -- use the class name)
+            let blueClass = document.getElementsByClassName('blue')
+            for(i=0; i<blueClass.length; i++)
+            blueClass[i].style.backgroundColor = "blue";
+
+            let orangeClass = document.getElementsByClassName('orange');
+            for(i=0; i<orangeClass.length; i++)
+            orangeClass[i].style.backgroundColor = "orange";
 
             // for the div with id "last_card", append a h1 tag to it that says "this is the last card"
 
+            let lastCard = document.getElementById('last_card');
+            let h1 = document.createElement('h1');
+            lastCard.append(h1);
+            h1.innerHTML = "this is the last card";
+
             // for the blue card, append a div with a brown background 
 
+            let newDiv = document.createElement('div');
+            newDiv.style.backgroundColor = "brown";
+            newDiv.style.height = "50px";
+            newDiv.style.width = "50px";
+            blueClass[0].append(newDiv);
+
+
             // remove any card with the class "red" from the DOM via javascript
+            for(i=0; i<redClass.length; i++)
+            redClass[i].style.display = "none";
 
         </script>
 
