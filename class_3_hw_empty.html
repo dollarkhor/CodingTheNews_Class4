@@ -22,28 +22,22 @@ let snp_data = [{"Date":"2/16/24","Close":5005.57},{"Date":"2/15/24","Close":502
 let day_change = [];
 
 
-/* For loop
 
-Go through the length of the array,
-
-minus one because you're not getting the change for the first day
-
-*/
-
+for (let i = 0; i < snp_data.length - 1; i++) {
     
     // Calculcate the change by day
 
-    // i is the current day, i+ 1 is the day before
-
+    let change = snp_data[i].Close - snp_data[i + 1].Close;   
 
     // Create an object
+    let new_element = {
+        'Date':snp_data[i].Date, 
+        'Change':change 
+    };
 
-        // this gets the date value for the element from the snp_data
+    day_change.push(new_element);
 
-        // value of the change data you just calculated
-
-    // push the change to the array
-
+}
 
 
 console.log(day_change); // prints the value out
